@@ -1,5 +1,5 @@
-import test from "@playwright/test";
 import { fakerCS_CZ as faker } from "@faker-js/faker";
+import { test } from "@playwright/test";
 
 test("Tetsting Data Generation in Faker", async ({ page }) => {
   await page.goto("https://tredgate.com/pmtool");
