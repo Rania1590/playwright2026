@@ -1,20 +1,15 @@
-import { type Locator, type Page } from "@playwright/test";
-import { LoginPage } from "./login_page.ts";
-import { ProjectsPage } from "./projects_page.ts";
-
-export class DashboardPage {
+import { Locator, Page } from "@playwright/test";
+import { LoginPage } from "../login_page.ts";
+export class ProjectTasksPage {
   readonly profileButton: Locator;
   readonly logoutButton: Locator;
   readonly page: Page;
-  readonly projectButton: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.profileButton = page.locator("#user_dropdown");
     this.logoutButton = page.locator("#logout");
-    this.projectButton = page.locator(`//li[@id="Projects"]`);
   }
-
   async clickProfile(): Promise<this> {
     await this.profileButton.click();
     return this;
@@ -22,9 +17,5 @@ export class DashboardPage {
   async clickLogout(): Promise<LoginPage> {
     await this.logoutButton.click();
     return new LoginPage(this.page);
-  }
-  async clickProjects(): Promise<ProjectsPage> {
-    await this.projectButton.click();
-    return new ProjectsPage(this.page);
   }
 }
