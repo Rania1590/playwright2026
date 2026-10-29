@@ -8,9 +8,9 @@
     "noEmit": true,
     "allowImportingTsExtensions": true,
     "moduleResolution": "node16",
-    "types": ["@playwright/test", "@types/node"],
+    "types": ["@playwright/test", "node"],
     "resolveJsonModule": true
   },
-  "include": ["src", "tests"],
+  "include": ["src", "tests", "playwright.config.ts"],
   "exclude": ["node_modules", "dist"]
 }
